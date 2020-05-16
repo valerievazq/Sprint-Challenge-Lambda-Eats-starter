@@ -11,7 +11,7 @@ function Home(props) {
   return (
       <div >
         <button className="optionbutton" onClick={routeToForm}>
-          Build Your Pizza!
+          Build Your Pizza
         </button>
       </div>
   );

@@ -6,18 +6,12 @@
 .nav {
   display: flex;
   justify-content: space-around;
+  background-color: lightgray;
+ 
 }
 
-.name {
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 5px 15px;
-}
-
-.instructions {
-  padding: 20%;
-  font-size: large;
-  text-align: center;
+.navbuttons {
+  color: black;
 }
 
 .size {
@@ -25,19 +19,6 @@ background-color: rgba(160, 95, 95, 0.199);
 width: 100%;
 }
 
-.storeName {
-  background: rgba(160, 95, 95, 0.199);
+/* .storeName {
   padding: 10% 0;
-}
-
-.optionbutton {
-  background-color: rgba(96, 178, 182, 0.534);
-  margin: 5%;
-  font-size: xx-large;
-  border: 2px solid black;
-  border-radius: 10px;
-}
-
-.buttons {
-  display: flex;
-}
+} */
