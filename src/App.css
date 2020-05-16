@@ -1,24 +1,108 @@
 .App {
   text-align: center;
-
 }
 
 .nav {
   display: flex;
   justify-content: space-around;
   background-color: lightgray;
- 
+  padding: 10px;
+}
+
+.form {
+  background-image: url(./pictures/backgroundP.jpg);
+  margin-top:15px;
+}
+
+.storeName {
+  background-image: url(./pictures/ivan-torres-MQUqbmszGGM-unsplash.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 15%;
+  color: white;
+}
+
+.lambdaEats {
+  background-color: rgba(112, 128, 144, 0.425);
+  padding: 5%;
+  letter-spacing: .6em;
 }
 
 .navbuttons {
   color: black;
 }
 
-.size {
-background-color: rgba(160, 95, 95, 0.199);
-width: 100%;
+.component {
+  margin: 25px auto;
+  background-color: rgba(255, 255, 255, 0.678);
+  padding: 10px 0;
 }
 
-/* .storeName {
-  padding: 10% 0;
-} */
+.name {
+  padding: 5px 40px;
+  border: 1.5px solid black;
+}
+
+.choices {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+  font-size: larger;
+}
+
+.selection {
+  border: 2px solid black;
+  padding: 2px 20px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+}
+.selectSize {
+  font-size: x-large;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.orderOptions {
+
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+  background-color: rgba(0, 0, 0, 0.247);
+  width: 100%;
+  padding: 20px;
+
+}
+
+.optionPizza {
+  background-image: url(./pictures/pizza.jpg);
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+  padding: 40px;
+  color: white;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.optionTacos {
+  background-image: url(./pictures/tacos.jpg);
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+  padding: 40px;
+  color: white;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.optionPasta{
+  background-image: url(./pictures/pasta.jpg);
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+  padding: 40px;
+  color: white;
+  font-size: xx-large;
+  font-weight: bolder;
+}

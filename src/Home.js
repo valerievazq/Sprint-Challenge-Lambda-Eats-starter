@@ -9,9 +9,18 @@ function Home(props) {
   };
 
   return (
-      <div >
-        <button className="optionbutton" onClick={routeToForm}>
-          Build Your Pizza
+      <div className='orderOptions'>
+        <button className="optionPizza" onClick={routeToForm}>
+          Get Pizza!
+        </button>
+
+        <button className="optionTacos">
+          Get Tacos!
+        </button>
+
+        
+        <button className="optionPasta">
+          Get Pasta!
         </button>
       </div>
   );
