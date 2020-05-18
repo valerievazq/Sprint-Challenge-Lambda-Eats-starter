@@ -12,10 +12,8 @@ const formSchema = yup.object().shape({
     .min(2, "Enter a longer name"),
   size: yup.string().required("Please select a size"),
   sauce: yup.string().required("You must choose a sauce"),
-
   toppings: yup
     .string()
-    .required()
     .min(1, "You must choose at least one topping"),
   instructions: yup.string(),
 });
@@ -52,9 +50,9 @@ const Form = (props) => {
   const validate = (e) => {
     let value =
       e.target.type === "checkbox"
-        ? e.target.checked
+        ? e.target.id
         : e.target.type === "radio"
-        ? e.target.checked
+        ? e.target.id
         : e.target.value;
 
     yup
@@ -83,12 +81,15 @@ const Form = (props) => {
     validate(e);
     const value =
       e.target.type === "checkbox"
-        ? e.target.checked
+        ? e.target.id
         : e.target.type === "radio"
-        ? e.target.checked
+        ? e.target.id
         : e.target.value;
 
-    setFormState({ ...formState, [e.target.name]: value });
+    setFormState({
+      ...formState,
+      [e.target.name]: value,
+    });
   };
 
   //STATE FOR NEW USER POST SUBMISSION
@@ -112,12 +113,11 @@ const Form = (props) => {
   //FORM
   return (
     <form onSubmit={formSubmit}>
- 
       <div className="form">
-      <h1>Fill out this form to place your order</h1>
-        <div className='component'>
+        <h1>Fill out this form to place your order</h1>
+        <div className="component">
           <h1>Name: </h1>
-          <label  htmlFor="name">
+          <label htmlFor="name">
             <input
               type="text"
               name="name"
@@ -125,17 +125,23 @@ const Form = (props) => {
               value={formState.name}
               onChange={handleChange}
               className="name"
-              placeholder='Your Name Here Please'
+              placeholder="Your Name Here Please"
             />
-            {error.name.length > 0 ? <p>{error.name}</p> : null}
+            {error.name.length > 2 ? <p>{error.name}</p> : null}
+            
           </label>
         </div>
 
-        <div className='component'>
+        <div className="component">
           <h2>Choose Your Size</h2>
           <div>
             <label htmlFor="size">
-              <select id="size" name="size" onChange={handleChange} className='selectSize'>
+              <select
+                id="size"
+                name="size"
+                onChange={handleChange}
+                className="selectSize"
+              >
                 <option value="">--Please choose a size--</option>
                 <option value="small">Small</option>
                 <option value="medium">Medium</option>
@@ -147,22 +153,26 @@ const Form = (props) => {
           </div>
         </div>
 
-        <div className='component'>
+        <div className="component">
           <h2>Select Your Choice of Sauce</h2>
-          <div className='choices'>
-            <label  className='selection' onChange={handleChange} htmlFor="marinara">
+          <div className="choices">
+            <label
+              className="selection"
+              onChange={handleChange}
+              htmlFor="marinara"
+            >
               Marinara
               <input
-                id="sauce"
+                id="marinara"
                 type="radio"
                 name="sauce"
                 value={formState.sauce}
               />
             </label>
-            <label  className='selection' htmlFor="garlicAlfredo">
+            <label className="selection" htmlFor="garlicAlfredo">
               Garlic Alfredo
               <input
-                id="sauce"
+                id="garlicAlfredo"
                 type="radio"
                 name="sauce"
                 value={formState.sauce}
@@ -171,8 +181,8 @@ const Form = (props) => {
             </label>
           </div>
 
-          <div  className='choices'>
-            <label className='selection'  htmlFor="bbq">
+          <div className="choices">
+            <label className="selection" htmlFor="bbq">
               BBQ
               <input
                 id="bbq"
@@ -182,7 +192,7 @@ const Form = (props) => {
                 onChange={handleChange}
               />
             </label>
-            <label  className='selection' htmlFor="creamyWhite">
+            <label className="selection" htmlFor="creamyWhite">
               Creamy White
               <input
                 id="sauce"
@@ -196,79 +206,78 @@ const Form = (props) => {
           </div>
         </div>
 
-        <div className='component'>
+        <div className="component">
           <h2>Please select at least one topping</h2>
-          <div className='choices'>
-            <label  className='selection' htmlFor="pepperoni">
+          <div className="choices">
+            <label className="selection" htmlFor="pepperoni">
               Pepperoni
               <input
-                id="toppings"
+                id="pepperoni"
                 type="checkbox"
                 name="toppings"
-                value={formState.pepperoni}
+                value='pepperoni'
                 onChange={handleChange}
               />
             </label>
 
-            <label className='selection' htmlFor="cheese">
+            <label className="selection" htmlFor="cheese">
               Cheese
               <input
-             
-                id="toppings"
+                id="cheese"
                 type="checkbox"
                 name="toppings"
-                value={formState.cheese}
+                value='cheese'
                 onChange={handleChange}
               />
             </label>
 
-            <label  className='selection' htmlFor="jalapeños">
+            <label className="selection" htmlFor="jalapeños">
               Jalapeños
               <input
-                id="toppings"
+                id="jalapeños"
                 type="checkbox"
                 name="toppings"
-                value={formState.jalapeños}
+                value='jalapeños'
                 onChange={handleChange}
               />
             </label>
           </div>
-          <div className='choices'>
-            <label  className='selection' htmlFor="bacon">
+          <div className="choices">
+            <label className="selection" htmlFor="bacon">
               Bacon
               <input
-                id="toppings"
+                id="bacon"
                 type="checkbox"
                 name="toppings"
-                value={formState.bacon}
+                value='bacon'
                 onChange={handleChange}
               />
             </label>
 
-            <label  className='selection' htmlFor="pineapple">
+            <label className="selection" htmlFor="pineapple">
               Pineapple
               <input
                 id="toppings"
                 type="checkbox"
                 name="toppings"
-                value={formState.pineapple}
+                value='pineapple'
                 onChange={handleChange}
               />
             </label>
 
-            <label  className='selection' htmlFor="peppers">
+            <label className="selection" htmlFor="peppers">
               Peppers
               <input
                 id="toppings"
                 type="checkbox"
                 name="toppings"
-                value={formState.peppers}
+                value='peppers'
                 onChange={handleChange}
               />
             </label>
           </div>
         </div>
-        <div className='component'>
+        <div className="component">
           <h2>Additional Instructions</h2>
           <div>
             <label htmlFor="instructions">

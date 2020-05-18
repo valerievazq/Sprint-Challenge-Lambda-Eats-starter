@@ -1,16 +1,17 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-function Home(props) {
+function Home() {
   const history = useHistory();
   console.log(history);
-  const routeToForm = (event) => {
+
+  const toForm = () => {
     history.push("/pizza");
   };
 
   return (
       <div className='orderOptions'>
-        <button className="optionPizza" onClick={routeToForm}>
+        <button className="optionPizza" onClick={toForm}>
           Get Pizza!
         </button>
 

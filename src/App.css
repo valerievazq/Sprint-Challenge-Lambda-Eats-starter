@@ -24,9 +24,10 @@
 }
 
 .lambdaEats {
-  background-color: rgba(112, 128, 144, 0.425);
+  background-color: rgba(0, 0, 0, 0.425);
   padding: 5%;
   letter-spacing: .6em;
+  font-weight: bolder;
 }
 
 .navbuttons {
